@@ -1,1 +1,1 @@
-Hi This is nishant.
+This repository contains sample programs on various Data structures and algorithms.
