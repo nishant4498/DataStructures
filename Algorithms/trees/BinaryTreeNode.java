@@ -9,8 +9,8 @@ public class BinaryTreeNode {
 		this.data = data;
 		this.leftNode = null;
 		this.rightNode = null;
-	}
-	
+	}	
+
 	public int getData(){
 		return this.data;		
 	}
@@ -34,5 +34,12 @@ public class BinaryTreeNode {
 	public  void setRightNode(BinaryTreeNode rNode){
 		this.rightNode = rNode;
 	}
+
+	@Override
+	public String toString() {
+		return "BinaryTreeNode [data=" + data + ", leftNode=" + leftNode + ", rightNode=" + rightNode + "]";
+	}
+	
+	
 
 }
