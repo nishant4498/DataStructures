@@ -2,6 +2,12 @@ import java.util.Arrays;
 
 public class SortingMethods {
 
+	/*
+	 * 1. One loop runs from the end to the beginning
+	 * 2. 2nd loop runs from beginning to the pass swapping values on the way.
+	 * After one iteration of Bubble sort the largest element is at the end of the array and this follows on.
+	 */
+	
 	public void BubbleSort(int[] A){
 		int pass, i, swapped = 1;
 		for (pass = A.length-1; pass >= 0 && swapped == 1 ; pass-- ){
@@ -22,6 +28,14 @@ public class SortingMethods {
 		A[j] = temp;
 	}
 	
+	/*
+	 * 1. Find the minimum value in the list.
+	 * 2. Swap with the value at the current position(starting from index 0)
+	 * 3. Repeat this for all the elements.
+	 * 
+	 * After one iteration of selection sort the smallest element is at the front of the array.
+	 */
+	
 	public void SelectionSort(int[] A){
 		int i, j, min;
 		for(i=0;i < A.length-1 ; i++){
@@ -36,6 +50,10 @@ public class SortingMethods {
 		}
 		
 	}
+	
+	/*
+	 * Demo at https://www.youtube.com/watch?v=DFG-XuyPYUQ
+	 */
 	
 	public void InsertionSort(int[] A){
 		int curr, i , j;
@@ -53,12 +71,12 @@ public class SortingMethods {
 
 	public static void main(String[] args) {
 		
-		int[] sampleArray = {1,2,5,1500,2,90,16,76};
+		int[] sampleArray = {25,2,5,1500,2,90,1,16,76};
 		SortingMethods sm = new SortingMethods();
 		System.out.println(Arrays.toString(sampleArray));
 		//sm.BubbleSort(sampleArray);
-		//sm.SelectionSort(sampleArray);
-		sm.InsertionSort(sampleArray);
+		sm.SelectionSort(sampleArray);
+		//sm.InsertionSort(sampleArray);
 		System.out.println(Arrays.toString(sampleArray));	
 
 	}
