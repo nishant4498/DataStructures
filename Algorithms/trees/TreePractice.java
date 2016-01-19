@@ -335,3 +335,59 @@ public Node FindLCA(Node root , Node a , Node b){
 	
 
 }
+
+/*
+*	Do a level order traversal in a Graph.
+*
+*/
+
+public boolean searchPathInGraph(Graph g, Node start , Node end){
+	if(start == end) return true;
+	
+	
+	if(start == null || end == null){
+		return false;
+	}
+	
+	//For BFS use queue
+	Queue myQueue = new LinkedList<Node>();
+	myQueue.offer(start);
+	
+	/*
+	* For DFS just use stack
+	* Stack<Node> myStack = new Stack<Node>(); 
+	*/
+	
+	while(!myQueue.empty()){
+		Node curr = myQueue.poll();
+		for(Node v: curr.neighbours()){
+			if(v.state != "visited"){
+				myQueue.offer(v);
+			}
+		}
+		if(curr == end){
+			return true;
+		}
+	}
+	return false;
+}
+
+/*
+* Given a sorted array(increasing) with unique integer elements , write an algorithm to find binary tree of minimum height.
+*/
+
+public TreeNode createMinimalBST(int array[]){
+	return createMinimalBST(array,0,array.length-1);
+}
+
+TreeNode createMinimalBST(int[] arr , start , end){
+	if(start > end) return null;
+	
+	int mid = (start + end)/2;
+	
+	TreeNode root = new TreeNode(arr[mid]);
+	root.left = createMinimalBST(arr,0 , mid -1);
+	root.right = createMinimalBST(arr , mid+1 , end);
+	
+	return root;
+}
