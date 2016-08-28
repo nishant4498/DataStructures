@@ -1,4 +1,4 @@
-public void levelOrderTraversal(Node root){
+/*public void levelOrderTraversal(Node root){
 	Queue<Node> myQueue = new LinkedList<Node>();
 	if(root == null){
 		return;
@@ -15,9 +15,9 @@ public void levelOrderTraversal(Node root){
 		System.out.println(curr.data);	
 	}
 }
-/*
+
 *This can be also done using level order traversal in the Binary tree.
-*/
+
 public int MaxInBinaryTree(Node root){
 	int maxValue = Integer.MIN_VALUE;
 	if(!root == null){
@@ -57,10 +57,10 @@ public int sizeOfTree(Node root){
 	
 	return 1 + leftCount + rightCount;
 }
-/*
+
 *	Check the code for deleting an element from a binary tree. Basically its equivalent to swapping that node with the last node of the tree
 * and deleting that last node.
-*/
+
 
 public int findNumOfLeafNodes(Node root){
 	Queue<Node> myQueue = new LinkedList<Node>();
@@ -87,10 +87,10 @@ public int findNumOfLeafNodes(Node root){
 }
 
 
-/*
+
 *	Structurally identical trees are the trees that have only the same structure but the content of the tree might be different.
 *	Identical trees are same both in terms 
-*/
+
 
 public boolean areStructurallyIdenticalTrees(Node root1 , Node root2){
 	if(root1 == null && root2 == null)
@@ -108,10 +108,10 @@ public boolean areIdenticalTrees(Node root1 , Node root2){
 	return ( root1.data == root2.data && isStructurallyIdenticalTree(root1.left , root2.left) && isStructurallyIdenticalTree(root1.right , root2.right) );
 }
 
-/*
+
 *	Diameter of a binary tree is the mas of these three 1) Diameter of the left subtree 2) Diameter of the right subtree
 *	3) The longest path b/w the leaf nodes passing through the root of the tree
-*/
+
 
 public int diameterOfTree(Node root){
 	if(root == null)
@@ -132,9 +132,9 @@ public int height(Node root){
 	return 1+ Math.max(height(root.left),height(root.right));
 }
 
-/*
+
 *	Finding the level that has maximum sum in a binary tree
-*/
+
 
 public int findMaxSumAtAnyLevel(Node root){
 	int currSum = 0, maxSum = 0;
@@ -169,11 +169,11 @@ public int findMaxSumAtAnyLevel(Node root){
 	return maxSum;
 }
 
-/*
+
 *	Printing all paths from root to leaf in a Binary tree.
 *	Use a path Array/ArrayList path[] to store current root to leaf path. Traverse from root to all leaves in top-down fashion. 
 *	While traversing, store data of all nodes in current path in array path[]. When we reach a leaf node, print the path array
-*/
+
 
 public void printAllPathFromRootToLeaf(Node root){
 	List<int> path = new ArrayList<int>();
@@ -201,11 +201,11 @@ public void printList(List<int> path){
 	System.out.println();
 }
 
-/*
+
 *	Check the existance of a path with a given sum.
 *	The idea is to subtract the current node data from the given sum before calling its children recursively 
 *	to see if the sum is 0 when we reach the leat node
-*/
+
 
 public boolean hasPathWithAGivenSum(Node root, int sum){
 	if(root == null){
@@ -219,11 +219,11 @@ public boolean hasPathWithAGivenSum(Node root, int sum){
 	}
 }
 
-/*
+
 *	Finding the sum of all nodes of a binary tree.
 *	This is recursive approach.
 *	Can also be found using doing a level order traversal and add each element to the sum while taking out of queue.
-*/
+
 
 public int findSumOfAllNodes(Node root){
 	if(root == null)
@@ -233,9 +233,9 @@ public int findSumOfAllNodes(Node root){
 
 }
 
-/*
+
 *	Mirror of a binary tree.
-*/
+
 
 public void MirrorOfTree(Node root){
 	if(root == null){
@@ -248,9 +248,9 @@ public void MirrorOfTree(Node root){
 	root.right = temp;
 }
 
-/*
+
 *	Check if two trees are mirror of one another.	
-*/
+
 
 public boolean isMirrorOfOther(Node root1 , node root2){
 	if(root1 == null && root2 == null){
@@ -264,16 +264,16 @@ public boolean isMirrorOfOther(Node root1 , node root2){
 	}	
 	return isMirrorOfOther(root1.left,root2.right) && isMirrorOfOther(root1.right,root2.left);
 	
-	/* The last two conditions can also be written as
-	return (root1.data == root2.data) && isMirrorOfOther(root1.left,root2.right) && isMirrorOfOther(root1.right,root2.left);*/
+	 The last two conditions can also be written as
+	return (root1.data == root2.data) && isMirrorOfOther(root1.left,root2.right) && isMirrorOfOther(root1.right,root2.left);
 }
 
-/*
+
 *	Build binary tree given its Inorder and Preorder traversals.
 * 	For Algorithm refer karumamnchi Page 155.
 *	The idea is - The first element in PreOrder array is the root of the tree. Find this element in the inorder array and it divides the nodes into
 *	left and right subtree.Recursively repeat the process for the left and right children.
-*/
+
 
 public Node buildBinaryTree(int[] preOrder , int[] inOrder){
 	if(preOrder.length == 0 || preOrder.length != inOrder.length){
@@ -298,10 +298,10 @@ public Node buildTree(int[] preOrder, int preStart, int preEnd , int[] inOrder ,
 			break;
 		}
 	}
-	/*
+	
 	* 	Offset gives the position the root element in the inOrder array.  
 	*	offset - inStart = number of nodes in left subtree.
-	*/
+	
 	
 	newNode.left = buildTree(preOrder, preStart + 1, preStart + offset - inStart , inOrder , inStart, offset-1); // Call the function for the left subtree.
 	newNode.right = buildTree(preOrder, preStart + offset - inStart + 1, preEnd , inOrder , offset + 1 , inEnd); // Call the function for the right subtree.
@@ -309,9 +309,9 @@ public Node buildTree(int[] preOrder, int preStart, int preEnd , int[] inOrder ,
 	return newNode;
 }
 
-/*
+
 *	Print the ancestors of a given node
-*/
+
 
 public boolean printAncestors(Node root , Node target){
 	if(root == null){
@@ -327,19 +327,19 @@ public boolean printAncestors(Node root , Node target){
 	return false;	
 }
 
-/*
+
 *	Find the least common ancestors of a two given nodes
-*/
+
 
 public Node FindLCA(Node root , Node a , Node b){
 	
 
 }
 
-/*
+
 *	Do a level order traversal in a Graph.
 *
-*/
+
 
 public boolean searchPathInGraph(Graph g, Node start , Node end){
 	if(start == end) return true;
@@ -353,10 +353,10 @@ public boolean searchPathInGraph(Graph g, Node start , Node end){
 	Queue myQueue = new LinkedList<Node>();
 	myQueue.offer(start);
 	
-	/*
+	
 	* For DFS just use stack
 	* Stack<Node> myStack = new Stack<Node>(); 
-	*/
+	
 	
 	while(!myQueue.empty()){
 		Node curr = myQueue.poll();
@@ -372,9 +372,9 @@ public boolean searchPathInGraph(Graph g, Node start , Node end){
 	return false;
 }
 
-/*
+
 * Given a sorted array(increasing) with unique integer elements , write an algorithm to find binary tree of minimum height.
-*/
+
 
 public TreeNode createMinimalBST(int array[]){
 	return createMinimalBST(array,0,array.length-1);
@@ -391,3 +391,4 @@ TreeNode createMinimalBST(int[] arr , start , end){
 	
 	return root;
 }
+*/
