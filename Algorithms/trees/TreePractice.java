@@ -1,4 +1,7 @@
-/*public void levelOrderTraversal(Node root){
+/* 
+
+public void levelOrderTraversal(Node root){
+
 	Queue<Node> myQueue = new LinkedList<Node>();
 	if(root == null){
 		return;
@@ -16,7 +19,25 @@
 	}
 }
 
-*This can be also done using level order traversal in the Binary tree.
+//Graph version - Here we need to keep an extra check for visited.
+ 
+public void BreadthFirstSearch(Node root){
+	Queue<Node> myQ = new LinkedList<>();
+	myQ.offer(root);
+	root.visited = true;
+	
+	while(!myQ.isEmpty()){
+		Node current = myQ.poll();
+		current.visted = true;
+		for(Node n : current.nbrs){
+			if(! n.visited){
+				myQ.offer(n);
+			}
+		}
+	}	
+}
+
+//This can be also done using level order traversal in the Binary tree.
 
 public int MaxInBinaryTree(Node root){
 	int maxValue = Integer.MIN_VALUE;
