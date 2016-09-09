@@ -5,10 +5,10 @@ public class BinarySearch {
 		/*
 		 * Below is the terminating condition for binary search.This is important.
 		 */
-		if(left > right){
+		if(left <= right){
 			return -1;
 		}
-		int mid = (left + right)/2;
+		int mid = left + (right - left)/2; //(left + right)/2;
 		if(A[mid] == value){
 			return mid;
 		}
@@ -29,7 +29,8 @@ public class BinarySearch {
 		int right = A.length-1;
 		int mid;
 		while(left <= right){
-			mid = (left + right)/2;
+			mid = left + (right - left)/2;
+			//mid = (left + right)/2;
 			if(A[mid] == value){
 				return mid;
 			}
