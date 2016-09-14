@@ -19,18 +19,18 @@ public class MergeSortLinkedList {
 
 class LinkedList{
  
-    Node head;  // head of list
+    ListNode head;  // head of list
  
-    Node mergeSort(Node head){
+    ListNode mergeSort(ListNode head){
         /* Base case -- length 0 or 1 */
         if(head == null || head.next == null){
             return head;
         }
         //get middle node for Split head into 'a' and 'b' sublists 
-        Node mid = getMidNode(head);
+        ListNode mid = getMidNode(head);
  
-        Node a = head;//firstList
-        Node b = mid.next;//secondList
+        ListNode a = head;//firstList
+        ListNode b = mid.next;//secondList
         mid.next = null;
  
         /* Recursively sort the sublists */
@@ -43,9 +43,9 @@ class LinkedList{
         return head;
     }
     
-    Node getMidNode(Node head){
-        Node slow = head;
-        Node fast = head.next;
+    ListNode getMidNode(ListNode head){
+        ListNode slow = head;
+        ListNode fast = head.next;
  
         while(fast != null && fast.next != null){
             slow = slow.next;
@@ -54,8 +54,8 @@ class LinkedList{
         return slow;
     }
  
-    Node SortedMerge(Node a,Node b){
-        Node result = null;
+    ListNode SortedMerge(ListNode a,ListNode b){
+        ListNode result = null;
         /* Base cases */
         if (a == null) 
             return(b);
@@ -80,13 +80,13 @@ class LinkedList{
     
     public void push(int data)
     {
-        Node newNode = new Node(data);
+        ListNode newNode = new ListNode(data);
         newNode.next = head;
         head = newNode;
     }    
    
-    void printList(Node head) {
-        Node node = head;
+    void printList(ListNode head) {
+        ListNode node = head;
         while (node != null) {
             System.out.print(node.data + " ");
             node = node.next;

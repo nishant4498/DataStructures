@@ -48,7 +48,7 @@ public class DFS {
 	public static void main (String args[]) throws FileNotFoundException{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the input file name with graph vertices and edges:");
-		//F:\workspace\java\Algorithms\graphs\graphs\GraphInput.txt
+		//D:\workspace\git\DataStructures\Algorithms\graphs\graphs\GraphInput.txt
 		String fileName = sc.next();
 		sc.close();
 		Graph g = new Graph(fileName);

@@ -1,10 +1,10 @@
 
 public class LinkedListBinaryToDec {
 
-	public static long TestMyCode(Node head) {
+	public static long TestMyCode(ListNode head) {
 		// TODO Auto-generated constructor stub
 		String number = "";	
-		Node temp = head;
+		ListNode temp = head;
 		while(temp.next != null){
 			number += temp.data;
 			temp = temp.next;
@@ -23,15 +23,15 @@ public class LinkedListBinaryToDec {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Node one = new Node(0);
-		Node one1 = new Node(0);
-		Node one2 = new Node(1);
-		Node one3 = new Node(1);
-		Node one4 = new Node(0);
-		Node one5 = new Node(1);
-		Node one6 = new Node(0);
+		ListNode one = new ListNode(0);
+		ListNode one1 = new ListNode(0);
+		ListNode one2 = new ListNode(1);
+		ListNode one3 = new ListNode(1);
+		ListNode one4 = new ListNode(0);
+		ListNode one5 = new ListNode(1);
+		ListNode one6 = new ListNode(0);
 		
-		Node head = one;
+		ListNode head = one;
 		
 		one.next = one1;
 		one1.next = one2;
@@ -46,15 +46,4 @@ public class LinkedListBinaryToDec {
 
 	}
 
-}
-
-class Node{
-	int data;
-	Node next;
-	
-	public Node(int data){
-		this.data = data;
-		next = null;
-	}
-	
 }

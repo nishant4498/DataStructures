@@ -5,7 +5,7 @@ public class BinarySearch {
 		/*
 		 * Below is the terminating condition for binary search.This is important.
 		 */
-		if(left <= right){
+		if(left > right){
 			return -1;
 		}
 		int mid = left + (right - left)/2; //(left + right)/2;
