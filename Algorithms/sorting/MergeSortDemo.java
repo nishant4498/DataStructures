@@ -39,6 +39,7 @@ public class MergeSortDemo {
 	public void MergeParts(int left , int mid , int right){
 		/*
 		 * This copies only the section being merged into the temporary array.
+		 * THIS IS THE KEY IN MERGE PROCEDURE
 		 */		
 		for(int i= left;i <= right;i++){
 			tempArray[i] = myArray[i];
@@ -52,9 +53,10 @@ public class MergeSortDemo {
 		
 		
 		/*
-		 * This takes one element each from both the parts(which have been stored in the tempArray)  and sorts them and
-		 * puts them in place in the original array.
-		 */	
+		 * This takes one element each from both the parts(which have been
+		 * stored in the tempArray) and sorts them and puts them in place in the
+		 * original array.
+		 */
 		while(i <= mid && j<= right){
 			if(tempArray[i] < tempArray[j]){
 				myArray[k] = tempArray[i];
