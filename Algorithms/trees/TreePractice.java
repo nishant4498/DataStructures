@@ -187,7 +187,8 @@ public class TreePractice {
 					maxSum = currSum;
 				}
 				currSum = 0; // reset it for the next level
-				if(!myQueue.isEmpty()){ // This step is important.
+				//This step is important.Without this condition will go to infinite loop.
+				if(!myQueue.isEmpty()){ 
 					myQueue.offer(null);
 				}
 			}	
@@ -200,7 +201,10 @@ public class TreePractice {
 	//*	Use a path Array/ArrayList path[] to store current root to leaf path. Traverse from root to all leaves in top-down fashion. 
 	//*	While traversing, store data of all nodes in current path in array path[]. When we reach a leaf node, print the path array
 	
-	
+	/*
+	 * Not sure whether this will work because the path will eventually keep adding 
+	 * all the values from left and right as we are not cloning the lists.
+	 */
 	public void printAllPathFromRootToLeaf(TreeNode root){
 		List<Integer> path = new ArrayList<Integer>();
 		printPath(root , path);	
